@@ -1,0 +1,20 @@
+Package: ggbasketball
+Type: Package
+Title: `ggplot2` Based Visualization of Basketball Data
+Version: 0.1.0
+Authors@R: c(
+  person("Yishu", "Xue", role = c("aut", "cre"), email = "xueyishu2436@gmail.com"))
+Description: Analytics of sports data depends a lot on visualizations. For
+  basketball data, creating visualizaitons is often time consuming. This package
+  aims to simplify the process by providing easy-to-use functions for creating
+  visualizations for basketball data.
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+Depends: R (>= 3.1.0), ggplot2
+Imports: ggrepel, ggsci, ggpubr
+Author: Yishu Xue [aut, cre]
+Maintainer: Yishu Xue <xueyishu2436@gmail.com>
+RoxygenNote: 7.1.1
+Collate: 'court.R' 'hello.R' 'ggcourt.R'
+NeedsCompilation: no
