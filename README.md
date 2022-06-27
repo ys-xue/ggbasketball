@@ -1,4 +1,4 @@
-ggbasketball: 'ggplot2' Based Visualization of Basketball Data
+# ggbasketball: 'ggplot2' Based Visualization of Basketball Data
 
 This package provides easy plotting for basketball data.
 
