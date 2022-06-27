@@ -16,5 +16,9 @@ Imports: ggrepel, ggsci, ggpubr
 Author: Yishu Xue [aut, cre]
 Maintainer: Yishu Xue <xueyishu2436@gmail.com>
 RoxygenNote: 7.1.1
-Collate: 'court.R' 'hello.R' 'ggcourt.R'
+Collate:
+  'court.R'
+  'ggcourt.R'
+  'ggshotchart.R'
+  'shotdata.R'
 NeedsCompilation: no
