@@ -9,7 +9,10 @@ ggshotchart(shotdata, x, y, orientation = "wide", bytype = FALSE, ...)
 \arguments{
 \item{shotdata}{a data.frame containing the location of shots.}
 
-\item{x, y}{x and y variables for drawing}
+\item{x, y}{x and y variables for drawing. x aligns with the wider side of the
+court, and should have values between [0, 47]. y aligns with the narrower
+side of the court (facing the hoop), and should have values between
+[-25, 25], with the hoop corresponding to a y value of 0.}
 
 \item{color}{optional, color for shot locations}
 
@@ -19,13 +22,19 @@ ggshotchart(shotdata, x, y, orientation = "wide", bytype = FALSE, ...)
 Draw a shot chart on court.
 }
 \details{
-Shot charts helps provide insights when analyzing a player's strength
-  and weakness.
+Shot charts helps provide insights when analyzing a player's
+  strengths and weakness.
 }
 \examples{
+# load data, take James Harden's shots as an example
+data(shotdata)
+harden <- shotdata[shotdata$Name == "James Harden", ]
+head(harden)
+# A Basic Shotchart
 
+ggshotchart(harden, x = "loc_x", y = "loc_y")
 
 }
 \seealso{
-
+\code{\link{court}}
 }
