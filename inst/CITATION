@@ -1,0 +1,13 @@
+citHeader("To cite ggbasketball in publications use:")
+
+citEntry(
+  entry    = "Manual",
+  title    = "ggbasketball: 'ggplot2' Based Visualization of Basketball Data",
+  author   = "Yishu Xue",
+  year     = 2022,
+  url      = "https://github.com/ys-xue/ggbasketball",
+  textVersion = "
+  Yishu Xue (2022). ggbasketball: 'ggplot2' Based Visualization of Basketball
+  Data. R package bersion 0.1.0. https://github.com/ys-xue/ggbasketball/
+  "
+)
