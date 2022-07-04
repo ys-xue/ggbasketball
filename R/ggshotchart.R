@@ -9,8 +9,9 @@
 #'   court, and should have values between [0, 47]. y aligns with the narrower
 #'   side of the court (facing the hoop), and should have values between
 #'   [-25, 25], with the hoop corresponding to a y value of 0.
-#' @param color optional, color for shot locations
-#' @param shape optional, shape for shot locations
+#' @param result optional, if not FALSE, it should point to a column indicating
+#'   whether the shot was made or missed. Both point shape and color will be
+#'   varied by the result.
 #'
 #' @seealso \code{\link{court}}
 #' @examples
@@ -28,13 +29,17 @@
 ggshotchart <- function(shotdata, x, y,
                         orientation = "wide",
                         bytype = FALSE,
+                        result,
                         ...) {
 
+  mapping <- ggpubr::create_aes(list(x = x, y = y, shape = result, col = result), parse = TRUE)
+
   if (orientation == "tall") {
-    mapping <- ggpubr::create_aes(list(x = y, y = x), parse = TRUE)
-  } else {
-    mapping <- ggpubr::create_aes(list(x = x, y = y), parse = TRUE)
+    temp <- mapping[["x"]]
+    mapping[["x"]] <- mapping[["y"]]
+    mapping[["y"]] <- temp
   }
+
   p <- ggcourt(halfcourt = TRUE, orientation = orientation) +
     geom_point(data = shotdata, mapping)
   p
