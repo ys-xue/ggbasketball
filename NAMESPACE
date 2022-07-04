@@ -2,3 +2,9 @@
 
 export(ggcourt)
 export(ggshotchart)
+export(ggshotintensity)
+import(ggplot2)
+import(ggpubr)
+importFrom(RColorBrewer,brewer.pal)
+importFrom(grDevices,colorRampPalette)
+importFrom(stats,quantile)

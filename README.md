@@ -34,3 +34,11 @@ ggshotchart(harden, x = "loc_x", y = "loc_y")
 #' ggshotchart(harden, x = "loc_x", y = "loc_y", result = "result_str")
 ```
 ![](tools/README-ggbasketball-3.png)
+
+## Intensity Plot
+
+```r
+# with contours
+ggshotintensity(green_intensity, x = "x", y = "y", value_col = "mean")
+```
+![](tools/README-ggbasketball-4.png)

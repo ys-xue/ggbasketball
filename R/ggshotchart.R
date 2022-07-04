@@ -14,6 +14,7 @@
 #' @param result optional, if not FALSE, it should point to a column indicating
 #'   whether the shot was made or missed. Both point shape and color will be
 #'   varied by the result.
+#' @param ... other arguments to be passed
 #'
 #' @seealso \code{\link{court}}
 #' @examples
@@ -31,13 +32,20 @@
 #' ggshotchart(harden, x = "loc_x", y = "loc_y", result = "result_str")
 #'
 #' @export
-ggshotchart <- function(shotdata, x, y,
+ggshotchart <- function(shotdata,
+                        x,
+                        y,
                         orientation = "wide",
                         result = NULL,
                         ...) {
-
-  mapping <- ggpubr::create_aes(list(x = x, y = y, shape = result, col = result), parse = TRUE)
-
+  mapping <-
+    ggpubr::create_aes(list(
+      x = x,
+      y = y,
+      shape = result,
+      col = result
+    ), parse = TRUE)
+  # if orientation is tall, swap the mapping
   if (orientation == "tall") {
     temp <- mapping[["x"]]
     mapping[["x"]] <- mapping[["y"]]

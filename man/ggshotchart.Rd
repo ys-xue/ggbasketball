@@ -20,6 +20,8 @@ side of the court (facing the hoop), and should have values between
 \item{result}{optional, if not FALSE, it should point to a column indicating
 whether the shot was made or missed. Both point shape and color will be
 varied by the result.}
+
+\item{...}{other arguments to be passed}
 }
 \description{
 Draw a shot chart on court.

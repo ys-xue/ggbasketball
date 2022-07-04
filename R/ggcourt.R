@@ -5,6 +5,10 @@
 #' @details This only plots a plain court without any labels or ticks.
 #' @param orientation orientation of the plot, can be "wide" (default) or "tall".
 #' @param halfcourt boolean. If TRUE, only draws a half court.
+#' @param ... other arguments to be passed
+#' @import ggplot2
+#' @import ggpubr
+#'
 #' @seealso \code{\link{court}}
 #' @examples
 #' ggcourt(orientation = "wide")
@@ -21,7 +25,7 @@ ggcourt <- function(orientation = "wide",
   }
 
   p <- ggplot(court) +
-    coord_fixed() + ggpubr::theme_pubr(border = TRUE) +
+    coord_fixed() + theme_pubr(border = TRUE) +
     scale_x_continuous(expand = c(0, 0)) +
     scale_y_continuous(expand = c(0, 0)) +
     xlab("") + ylab("") +

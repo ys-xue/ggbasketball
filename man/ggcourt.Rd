@@ -10,6 +10,8 @@ ggcourt(orientation = "wide", halfcourt = FALSE, ...)
 \item{orientation}{orientation of the plot, can be "wide" (default) or "tall".}
 
 \item{halfcourt}{boolean. If TRUE, only draws a half court.}
+
+\item{...}{other arguments to be passed}
 }
 \description{
 Draw a base basketball court.
