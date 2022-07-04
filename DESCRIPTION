@@ -15,7 +15,7 @@ Depends: R (>= 3.1.0), ggplot2
 Imports: ggrepel, ggsci, ggpubr
 Author: Yishu Xue [aut, cre]
 Maintainer: Yishu Xue <xueyishu2436@gmail.com>
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.0
 Collate:
   'court.R'
   'ggcourt.R'

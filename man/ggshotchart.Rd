@@ -4,7 +4,7 @@
 \alias{ggshotchart}
 \title{Shot Chart}
 \usage{
-ggshotchart(shotdata, x, y, orientation = "wide", bytype = FALSE, ...)
+ggshotchart(shotdata, x, y, orientation = "wide", result = NULL, ...)
 }
 \arguments{
 \item{shotdata}{a data.frame containing the location of shots.}
@@ -14,9 +14,12 @@ court, and should have values between [0, 47]. y aligns with the narrower
 side of the court (facing the hoop), and should have values between
 [-25, 25], with the hoop corresponding to a y value of 0.}
 
-\item{color}{optional, color for shot locations}
+\item{orientation}{orientation of the court, defaults to "wide"; options are
+"wide" and "tall".}
 
-\item{shape}{optional, shape for shot locations}
+\item{result}{optional, if not FALSE, it should point to a column indicating
+whether the shot was made or missed. Both point shape and color will be
+varied by the result.}
 }
 \description{
 Draw a shot chart on court.
@@ -31,8 +34,13 @@ data(shotdata)
 harden <- shotdata[shotdata$Name == "James Harden", ]
 head(harden)
 # A Basic Shotchart
-
 ggshotchart(harden, x = "loc_x", y = "loc_y")
+
+# Change orientation
+ggshotchart(harden, x = "loc_x", y = "loc_y", orientation = "tall")
+
+# vary the color and shape by shot result
+ggshotchart(harden, x = "loc_x", y = "loc_y", result = "result_str")
 
 }
 \seealso{
